@@ -1,5 +1,8 @@
 package mines.zone
 
+// TODO: Zone should not know about its own state.
+// TODO: Should zone know its "index"?  Seems like no...
+
 class Zone(private val value: ZoneValue = ZoneValue.ZERO,
            initialState: ZoneState = ZoneState.COVERED,
            zoneStateChangedListener: OnZoneStateChangedListener = object : OnZoneStateChangedListener {})
