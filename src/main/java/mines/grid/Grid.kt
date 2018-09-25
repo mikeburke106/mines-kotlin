@@ -54,18 +54,22 @@ class Grid(val width: Int,
     }
 
     fun isLeftBoundary(index: Int): Boolean {
+        checkIndex(index)
         return index % width == 0
     }
 
     fun isRightBoundary(index: Int): Boolean {
+        checkIndex(index)
         return index % width == (width - 1)
     }
 
     fun isTopBoundary(index: Int): Boolean {
+        checkIndex(index)
         return index in 0..(width - 1)
     }
 
     fun isBottomBoundary(index: Int): Boolean {
+        checkIndex(index)
         return index in (width * (height - 1))..(size - 1)
     }
 }
