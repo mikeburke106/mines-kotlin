@@ -7,8 +7,7 @@ class GridFactory {
     data class Filter(val x: Int, val y: Int, val zoneState: ZoneState)
 
     fun newInstance(width: Int, height: Int, numOfMines: Int, filters: List<Filter> = listOf()): Grid{
-        val result = Grid(width, height)
-        return result
+        return Grid(width, height)
     }
 
 }

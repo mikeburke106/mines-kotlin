@@ -2,8 +2,8 @@ package mines.grid
 
 import mines.zone.ZoneValue
 
-class Grid(val width: Int,
-           val height: Int,
+class Grid(private val width: Int,
+           private val height: Int,
            private val minePositions: List<Int> = listOf()) {
 
     private val size = width * height
@@ -22,7 +22,7 @@ class Grid(val width: Int,
         }
 
         for (value in minePositions) {
-            check(value in 0..(size - 1)) {
+            check(value in 0 until size) {
                 "invalid index for mine position $value"
             }
         }
@@ -48,7 +48,7 @@ class Grid(val width: Int,
     }
 
     private fun checkIndex(index: Int) {
-        check(index in 0..(size - 1)) {
+        check(index in 0 until size) {
             "index $index out of bounds"
         }
     }
@@ -65,11 +65,11 @@ class Grid(val width: Int,
 
     fun isTopBoundary(index: Int): Boolean {
         checkIndex(index)
-        return index in 0..(width - 1)
+        return index in 0 until width
     }
 
     fun isBottomBoundary(index: Int): Boolean {
         checkIndex(index)
-        return index in (width * (height - 1))..(size - 1)
+        return index in (width * (height - 1)) until size
     }
 }

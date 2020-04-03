@@ -11,7 +11,7 @@ class GridStateMachine(zoneDataProviderList: List<ZoneDataProvider>,
 
     init {
         val builderList: MutableList<ZoneStateMachine> = ArrayList()
-        for (i in (0 until zoneDataProviderList.size)) {
+        for (i in zoneDataProviderList.indices) {
             val zoneStateMachine = zoneStateMachineFactory.newInstance(zoneDataProviderList[i])
             builderList.add(zoneStateMachine)
         }
